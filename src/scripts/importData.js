@@ -191,7 +191,4 @@ export const importAllData = async () => {
   }
 };
 
-// Se executado diretamente, roda a importação
-if (import.meta.url === `file://${process.argv[1]}`) {
-  importAllData();
-}
+// Script disponível para importação manual via interface
