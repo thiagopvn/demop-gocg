@@ -1,0 +1,372 @@
+/* Estilos modernizados para diálogos */
+
+/* Container principal do diálogo */
+.MuiDialog-paper {
+    border-radius: 20px !important;
+    overflow: hidden;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15) !important;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.98) 0%, rgba(248, 250, 252, 0.98) 100%) !important;
+    backdrop-filter: blur(20px);
+    animation: dialogSlideIn 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@keyframes dialogSlideIn {
+    from {
+        opacity: 0;
+        transform: scale(0.9) translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+    }
+}
+
+/* Header do diálogo */
+.MuiDialogTitle-root {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white !important;
+    padding: 20px 24px !important;
+    font-size: 1.25rem !important;
+    font-weight: 600 !important;
+    position: relative;
+    overflow: hidden;
+}
+
+.MuiDialogTitle-root::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0.5) 50%, rgba(255,255,255,0) 100%);
+    animation: shimmer 2s infinite;
+}
+
+@keyframes shimmer {
+    0% { transform: translateX(-100%); }
+    100% { transform: translateX(100%); }
+}
+
+/* Conteúdo do diálogo */
+.MuiDialogContent-root {
+    padding: 24px !important;
+    background: transparent;
+    position: relative;
+}
+
+.MuiDialogContent-root::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 100px;
+    background: linear-gradient(180deg, rgba(102, 126, 234, 0.05) 0%, transparent 100%);
+    pointer-events: none;
+}
+
+/* Actions do diálogo */
+.MuiDialogActions-root {
+    padding: 16px 24px !important;
+    background: linear-gradient(180deg, transparent 0%, rgba(248, 250, 252, 0.8) 100%);
+    border-top: 1px solid rgba(102, 126, 234, 0.1);
+    gap: 12px;
+}
+
+/* Botões dentro do diálogo */
+.MuiDialog-paper .MuiButton-root {
+    border-radius: 10px;
+    padding: 10px 24px;
+    font-weight: 500;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    text-transform: none;
+}
+
+.MuiDialog-paper .MuiButton-contained {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+}
+
+.MuiDialog-paper .MuiButton-contained:hover {
+    background: linear-gradient(135deg, #764ba2 0%, #667eea 100%);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4);
+}
+
+.MuiDialog-paper .MuiButton-outlined {
+    border: 2px solid rgba(102, 126, 234, 0.3);
+    color: #667eea;
+    background: rgba(255, 255, 255, 0.5);
+}
+
+.MuiDialog-paper .MuiButton-outlined:hover {
+    background: rgba(102, 126, 234, 0.1);
+    border-color: #667eea;
+    transform: translateY(-2px);
+}
+
+/* Campos de texto dentro do diálogo */
+.MuiDialog-paper .MuiTextField-root {
+    margin-bottom: 20px;
+}
+
+.MuiDialog-paper .MuiOutlinedInput-root {
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.8);
+    transition: all 0.3s ease;
+}
+
+.MuiDialog-paper .MuiOutlinedInput-root:hover {
+    background: rgba(255, 255, 255, 1);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.MuiDialog-paper .MuiOutlinedInput-root.Mui-focused {
+    background: rgba(255, 255, 255, 1);
+    box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.15);
+}
+
+.MuiDialog-paper .MuiInputLabel-root {
+    color: #718096;
+    font-weight: 500;
+}
+
+.MuiDialog-paper .MuiInputLabel-root.Mui-focused {
+    color: #667eea;
+}
+
+/* Select dentro do diálogo */
+.MuiDialog-paper .MuiSelect-root {
+    border-radius: 10px;
+}
+
+.MuiDialog-paper .MuiMenuItem-root {
+    transition: all 0.2s ease;
+    border-radius: 8px;
+    margin: 2px 8px;
+}
+
+.MuiDialog-paper .MuiMenuItem-root:hover {
+    background: linear-gradient(135deg, rgba(102, 126, 234, 0.1) 0%, rgba(118, 75, 162, 0.1) 100%);
+    transform: translateX(5px);
+}
+
+/* Checkbox e Radio buttons */
+.MuiDialog-paper .MuiCheckbox-root,
+.MuiDialog-paper .MuiRadio-root {
+    color: #667eea;
+    transition: transform 0.2s ease;
+}
+
+.MuiDialog-paper .MuiCheckbox-root:hover,
+.MuiDialog-paper .MuiRadio-root:hover {
+    transform: scale(1.1);
+}
+
+.MuiDialog-paper .MuiCheckbox-root.Mui-checked,
+.MuiDialog-paper .MuiRadio-root.Mui-checked {
+    color: #764ba2;
+}
+
+/* Switch */
+.MuiDialog-paper .MuiSwitch-root .MuiSwitch-track {
+    background-color: #cbd5e0;
+}
+
+.MuiDialog-paper .MuiSwitch-root .Mui-checked + .MuiSwitch-track {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;
+}
+
+.MuiDialog-paper .MuiSwitch-root .MuiSwitch-thumb {
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+/* DataGrid dentro do diálogo */
+.MuiDialog-paper .MuiDataGrid-root {
+    border: none;
+    border-radius: 12px;
+    overflow: hidden;
+    background: rgba(255, 255, 255, 0.8);
+}
+
+.MuiDialog-paper .MuiDataGrid-columnHeaders {
+    background: linear-gradient(135deg, rgba(102, 126, 234, 0.1) 0%, rgba(118, 75, 162, 0.1) 100%);
+    border-bottom: 2px solid rgba(102, 126, 234, 0.2);
+}
+
+.MuiDialog-paper .MuiDataGrid-row:hover {
+    background: rgba(102, 126, 234, 0.05);
+}
+
+/* Autocomplete dentro do diálogo */
+.MuiDialog-paper .MuiAutocomplete-root .MuiOutlinedInput-root {
+    padding-right: 39px;
+}
+
+.MuiDialog-paper .MuiAutocomplete-listbox {
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.98) 0%, rgba(248, 250, 252, 0.98) 100%);
+    border-radius: 10px;
+    padding: 8px;
+}
+
+.MuiDialog-paper .MuiAutocomplete-option {
+    border-radius: 8px;
+    margin: 2px 0;
+    transition: all 0.2s ease;
+}
+
+.MuiDialog-paper .MuiAutocomplete-option:hover {
+    background: linear-gradient(135deg, rgba(102, 126, 234, 0.1) 0%, rgba(118, 75, 162, 0.1) 100%);
+    transform: translateX(5px);
+}
+
+/* Alert dentro do diálogo */
+.MuiDialog-paper .MuiAlert-root {
+    border-radius: 12px;
+    margin-bottom: 16px;
+    animation: alertSlideIn 0.3s ease-out;
+}
+
+@keyframes alertSlideIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.MuiDialog-paper .MuiAlert-standardSuccess {
+    background: linear-gradient(135deg, rgba(72, 187, 120, 0.1) 0%, rgba(56, 161, 105, 0.1) 100%);
+    border: 1px solid rgba(72, 187, 120, 0.3);
+}
+
+.MuiDialog-paper .MuiAlert-standardError {
+    background: linear-gradient(135deg, rgba(245, 101, 101, 0.1) 0%, rgba(229, 62, 62, 0.1) 100%);
+    border: 1px solid rgba(245, 101, 101, 0.3);
+}
+
+.MuiDialog-paper .MuiAlert-standardWarning {
+    background: linear-gradient(135deg, rgba(237, 137, 54, 0.1) 0%, rgba(221, 107, 32, 0.1) 100%);
+    border: 1px solid rgba(237, 137, 54, 0.3);
+}
+
+.MuiDialog-paper .MuiAlert-standardInfo {
+    background: linear-gradient(135deg, rgba(66, 153, 225, 0.1) 0%, rgba(49, 130, 206, 0.1) 100%);
+    border: 1px solid rgba(66, 153, 225, 0.3);
+}
+
+/* Tabs dentro do diálogo */
+.MuiDialog-paper .MuiTabs-root {
+    border-bottom: 1px solid rgba(102, 126, 234, 0.1);
+}
+
+.MuiDialog-paper .MuiTab-root {
+    text-transform: none;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.MuiDialog-paper .MuiTab-root:hover {
+    background: rgba(102, 126, 234, 0.05);
+}
+
+.MuiDialog-paper .MuiTabs-indicator {
+    background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
+    height: 3px;
+    border-radius: 3px;
+}
+
+/* Stepper dentro do diálogo */
+.MuiDialog-paper .MuiStepIcon-root.Mui-active {
+    color: #667eea;
+}
+
+.MuiDialog-paper .MuiStepIcon-root.Mui-completed {
+    color: #48bb78;
+}
+
+.MuiDialog-paper .MuiStepConnector-line {
+    border-color: rgba(102, 126, 234, 0.2);
+}
+
+.MuiDialog-paper .MuiStepConnector-root.Mui-active .MuiStepConnector-line,
+.MuiDialog-paper .MuiStepConnector-root.Mui-completed .MuiStepConnector-line {
+    border-color: #667eea;
+}
+
+/* Loading state */
+.dialog-loading {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 200px;
+}
+
+.dialog-loading-spinner {
+    width: 50px;
+    height: 50px;
+    border: 3px solid rgba(102, 126, 234, 0.2);
+    border-top: 3px solid #667eea;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .MuiDialog-paper {
+        margin: 16px !important;
+        border-radius: 16px !important;
+    }
+    
+    .MuiDialogTitle-root {
+        padding: 16px 20px !important;
+        font-size: 1.125rem !important;
+    }
+    
+    .MuiDialogContent-root {
+        padding: 20px !important;
+    }
+    
+    .MuiDialogActions-root {
+        padding: 12px 20px !important;
+        flex-direction: column;
+    }
+    
+    .MuiDialog-paper .MuiButton-root {
+        width: 100%;
+    }
+}
+
+/* Modo escuro */
+@media (prefers-color-scheme: dark) {
+    .MuiDialog-paper {
+        background: linear-gradient(135deg, rgba(26, 32, 44, 0.98) 0%, rgba(45, 55, 72, 0.98) 100%) !important;
+    }
+    
+    .MuiDialogTitle-root {
+        background: linear-gradient(135deg, #4a6fa5 0%, #667eea 100%);
+    }
+    
+    .MuiDialog-paper .MuiOutlinedInput-root {
+        background: rgba(45, 55, 72, 0.5);
+        color: #e2e8f0;
+    }
+    
+    .MuiDialog-paper .MuiInputLabel-root {
+        color: #a0aec0;
+    }
+    
+    .MuiDialogActions-root {
+        background: linear-gradient(180deg, transparent 0%, rgba(26, 32, 44, 0.8) 100%);
+        border-top: 1px solid rgba(102, 126, 234, 0.2);
+    }
+}
