@@ -13,6 +13,7 @@ import { CategoriaProvider } from './contexts/CategoriaContext';
 import Devolucoes from './screens/Devolucoes/Devolucoes';
 import Rings from './screens/Rings/Rings';
 import MainSearch from './screens/Search/MainSearch';
+import Setup from './screens/Setup/Setup';
 
 function App() {
   const [count, setCount] = useState(0)
@@ -34,6 +35,7 @@ function App() {
             <Route path='/devolucoes' element={<Devolucoes/>} />
             <Route path='/aneis' element={<Rings />} />
             <Route path='/search' element={<MainSearch />} />
+            <Route path='/setup' element={<Setup />} />
           </Routes>
         </Router>
 

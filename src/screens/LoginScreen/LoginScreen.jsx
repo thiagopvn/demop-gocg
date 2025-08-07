@@ -84,7 +84,7 @@ export default function LoginScreen() {
   }, []);
 
   const navigateToFirstAccess = () => {
-    navigate("/first-access");
+    navigate("/setup");
   };
 
   const handleLogin = async () => {
